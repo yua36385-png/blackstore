@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متجر بلاك | Black Store</title>
+    <style>
+        /* تنسيقات التصميم (ألوان أسود وأحمر) */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            color: #ff0000;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            font-size: 2.5em;
+        }
+        .subtitle {
+            color: #aaaaaa;
+            margin-bottom: 30px;
+        }
+        /* تنسيق المنتجات */
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .product-card {
+            background-color: #1a1a1a;
+            border: 2px solid #ff0000;
+            border-radius: 12px;
+            padding: 15px;
+            width: 260px;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(255, 0, 0, 0.5);
+        }
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+        .product-card h3 {
+            margin: 15px 0 5px 0;
+            color: #ff0000;
+            font-size: 1.3em;
+        }
+        .product-card p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #cccccc;
+        }
+        .price {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #00ff00; /* لون السعر أخضر */
+            margin-top: 10px;
+            background: #000;
+            padding: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        /* قسم الدفع */
+        .payment-section {
+            background-color: #151515;
+            border: 2px dashed #ff0000;
+            border-radius: 12px;
+            padding: 25px;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .payment-section h2 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .wallet-box {
+            background-color: #000;
+            border: 1px solid #555;
+            padding: 12px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 16px;
+            color: #00ff00;
+            margin: 15px 0;
+            word-break: break-all;
+            cursor: pointer; /* للنسخ بنقرة واحدة */
+        }
+        .wallet-box:hover {
+            border-color: #ff0000;
+        }
+        input[type="text"] {
+            width: 85%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ff0000;
+            border-radius: 8px;
+            background-color: #000;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            box-shadow: 0 0 10px #ff0000;
+        }
+        button {
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 15px;
+            width: 90%;
+        }
+        button:hover {
+            background-color: #cc0000;
+            box-shadow: 0 0 20px #ff0000;
+        }
+        button:disabled {
+            background-color: #333;
+            color: #777;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+        .error-msg {
+            color: #ff0000;
+            font-weight: bold;
+            display: none; /* مخفي افتراضياً */
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .instructions {
+            text-align: right;
+            font-size: 14px;
+            color: #aaa;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>متجر بلاك</h1>
+    <p class="subtitle">أفضل المنتجات بأفضل الأسعار - الدفع بعملة LTC</p>
+
+    <!-- قسم المنتجات -->
+    <div class="products-container">
+        
+        <!-- المنتج الأول (يمكنك تعديله أو نسخه لإضافة المزيد) -->
+        <div class="product-card">
+            <!-- ضع رابط صورة منتجك هنا (استبدل الرابط أدناه) -->
+            <img src="https://via.placeholder.com/300x200?text=Product+1" alt="المنتج الأول">
+            <h3>اسم المنتج الأول</h3>
+            <p>الكمية: 5 متوفرة</p>
+            <p>الوصف: يعطيك 5000 عملة</p>
+            <p class="price">السعر: 0.15 LTC</p>
+        </div>
+
+        <!-- المنتج الثاني -->
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x200?text=Product+2" alt="المنتج الثاني">
+            <h3>اسم المنتج الثاني</h3>
+            <p>الكمية: 2 متوفرة</p>
+            <p>الوصف: حساب مميز مستوى 100</p>
+            <p class="price">السعر: 0.50 LTC</p>
+        </div>
+
+    </div>
+
+    <!-- قسم الدفع والتحقق -->
+    <div class="payment-section">
+        <h2>إتمام عملية الدفع</h2>
+        
+        <div class="instructions">
+            <p>1. قم بتحويل المبلغ المطلوب إلى محفظة LTC التالية (اضغط عليها لنسخها):</p>
+        </div>
+        
+        <!-- عنوان المحفظة الخاص بك -->
+        <div class="wallet-box" onclick="copyWallet()" title="اضغط للنسخ">
+            LagzVeWDnCiJDgjSL4x7epBN1q3KeuPyYk
+        </div>
+        <small id="copyMsg" style="color: #00ff00; display: none;">تم النسخ!</small>
+
+        <div class="instructions">
+            <p>2. أدخل اسمك أو رمز الديسكورد (إجباري للتحقق):</p>
+        </div>
+        
+        <input type="text" id="discordName" placeholder="اكتب اسمك أو رمز الديسكورد هنا..." oninput="checkInput()">
+        
+        <p class="error-msg" id="errorMsg">⚠️ يجب كتابة الاسم أو الرمز للمتابعة!</p>
+
+        <button id="discordBtn" disabled onclick="goToDiscord()">لقد دفعت، انتقل للديسكورد</button>
+        
+        <p style="font-size: 12px; color: #666; margin-top: 15px;">
+            بعد التحويل والضغط على الزر، ستنتقل إلى سيرفر الديسكورد. اكتب في التذكرة (Ticket) نفس الاسم الذي كتبته هنا.
+        </p>
+    </div>
+
+    <script>
+        // ==========================================
+        // ⚠️ هام جداً: ضع رابط سيرفر الديسكورد الخاص بك هنا
+        // استبدل الرابط أدناه برابط الدعوة الخاص بسيرفرك
+        // ==========================================
+        const DISCORD_INVITE_LINK = "https://discord.gg/YourServerLinkHere"; 
+
+        // دالة نسخ المحفظة عند الضغط عليها
+        function copyWallet() {
+            const wallet = "LagzVeWDnCiJDgjSL4x7epBN1q3KeuPyYk";
+            navigator.clipboard.writeText(wallet).then(() => {
+                const msg = document.getElementById('copyMsg');
+                msg.style.display = 'block';
+                setTimeout(() => { msg.style.display = 'none'; }, 2000);
+            });
+        }
+
+        // دالة التحقق من الحقل الإجباري
+        function checkInput() {
+            const input = document.getElementById('discordName').value.trim();
+            const btn = document.getElementById('discordBtn');
+            const errorMsg = document.getElementById('errorMsg');
+
+            if (input.length > 0) {
+                btn.disabled = false; // تفعيل الزر
+                errorMsg.style.display = 'none'; // إخفاء الخطأ
+            } else {
+                btn.disabled = true; // تعطيل الزر
+                errorMsg.style.display = 'block'; // إظهار الخطأ
+            }
+        }
+
+        // دالة الانتقال للديسكورد
+        function goToDiscord() {
+            const name = document.getElementById('discordName').value.trim();
+            if (name === "") {
+                alert("يجب كتابة الاسم أو الرمز أولاً!");
+                return;
+            }
+            // فتح رابط الديسكورد في نافذة جديدة
+            window.open(DISCORD_INVITE_LINK, '_blank');
+        }
+    </script>
+
+</body>
+</html>
